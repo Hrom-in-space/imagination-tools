@@ -1,0 +1,10 @@
+{
+  "type": "record",
+  "name": "StoryUploadedV1",
+  "fields": [
+    {
+      "name": "taskID",
+      "type": "string"
+    }
+  ]
+}
