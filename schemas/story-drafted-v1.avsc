@@ -1,0 +1,14 @@
+{
+  "type": "record",
+  "name": "StoryDraftedV1",
+  "fields": [
+    {
+      "name": "taskID",
+      "type": "string"
+    },
+    {
+      "name": "artifactCount",
+      "type": "int"
+    }
+  ]
+}
