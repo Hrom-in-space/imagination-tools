@@ -1,6 +1,17 @@
 version: '3'
 
 tasks:
-    gen-shemas:
-      cmds:
-        - go tool avrogo -p schemas -d schemas ./schemas/*.avsc
+  gen-shemas:
+    cmds:
+      - go tool avrogo -p schemas -d schemas ./schemas/*.avsc
+
+  doc-gen:
+    cmds:
+      - |
+        {
+          for p in $(go list ./...); do
+          printf "==== %s ====\n" "$p"
+          go doc -all "$p"
+          printf "\n\n"
+          done
+        } > "README.md"

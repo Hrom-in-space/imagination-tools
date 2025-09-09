@@ -5,6 +5,7 @@ go 1.24
 tool github.com/heetch/avro/cmd/avrogo
 
 require (
+	cloud.google.com/go/pubsub v1.49.0
 	cloud.google.com/go/storage v1.56.1
 	github.com/cloudevents/sdk-go/v2 v2.16.1
 	github.com/heetch/avro v0.4.79
@@ -38,8 +39,10 @@ require (
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/planetscale/vtprotobuf v0.6.1-0.20240319094008-0393e58bdf10 // indirect
+	github.com/sergi/go-diff v1.3.1 // indirect
 	github.com/spiffe/go-spiffe/v2 v2.5.0 // indirect
 	github.com/zeebo/errs v1.4.0 // indirect
+	go.opencensus.io v0.24.0 // indirect
 	go.opentelemetry.io/auto/sdk v1.1.0 // indirect
 	go.opentelemetry.io/contrib/detectors/gcp v1.36.0 // indirect
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.61.0 // indirect

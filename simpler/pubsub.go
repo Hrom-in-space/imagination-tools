@@ -10,24 +10,31 @@ import (
 )
 
 // PubSubClient handles Google Cloud Pub/Sub operations.
-type PubSubClient struct {
+type PubSubClient interface {
+	// PublishMessage publishes a message.
+	PublishMessage(ctx context.Context, topicID string, object any) error
+}
+
+type pubSubClient struct {
 	client *pubsub.Client
 }
 
-// NewPubSubClient creates a new PubSubGateway instance.
-func NewPubSubClient(ctx context.Context, projectID string) (*PubSubClient, error) {
+var _ PubSubClient = (*pubSubClient)(nil)
+
+// NewPubSubClient creates a new Pub/Sub client that implements PubSubClient.
+func NewPubSubClient(ctx context.Context, projectID string) (PubSubClient, error) {
 	client, err := pubsub.NewClient(ctx, projectID)
 	if err != nil {
 		return nil, fmt.Errorf("creating pubsub client: %w", err)
 	}
 
-	return &PubSubClient{
+	return &pubSubClient{
 		client: client,
 	}, nil
 }
 
 // PublishMessage publishes a message to the configured topic.
-func (c *PubSubClient) PublishMessage(ctx context.Context, topicID string, object any) error {
+func (c *pubSubClient) PublishMessage(ctx context.Context, topicID string, object any) error {
 	topic := c.client.Topic(topicID)
 
 	data, err := json.Marshal(object)

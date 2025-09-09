@@ -9,24 +9,31 @@ import (
 	"cloud.google.com/go/storage"
 )
 
-type StorageClient struct {
+type StorageClient interface {
+	// UploadFile uploads a file to the specified bucket.
+	UploadFile(ctx context.Context, bucket string, name string, content io.Reader) error
+}
+
+type storageClient struct {
 	client *storage.Client
 }
 
+var _ StorageClient = (*storageClient)(nil)
+
 // NewStorageClient creates a new StorageGateway instance.
-func NewStorageClient(ctx context.Context) (*StorageClient, error) {
+func NewStorageClient(ctx context.Context) (StorageClient, error) {
 	client, err := storage.NewClient(ctx)
 	if err != nil {
 		return nil, fmt.Errorf("creating storage client: %w", err)
 	}
 
-	return &StorageClient{
+	return &storageClient{
 		client: client,
 	}, nil
 }
 
 // UploadFile uploads a file to the specified bucket.
-func (c *StorageClient) UploadFile(ctx context.Context, bucket string, name string, content io.Reader) error {
+func (c *storageClient) UploadFile(ctx context.Context, bucket string, name string, content io.Reader) error {
 	obj := c.client.Bucket(bucket).Object(name)
 	wc := obj.NewWriter(ctx)
 

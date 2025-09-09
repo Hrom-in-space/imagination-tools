@@ -29,8 +29,6 @@ type MessagePublishedData struct {
 // EventToStruct extracts the Pub/Sub message from a CloudEvent and
 // unmarshals its JSON data into v.
 // v must be a pointer to a struct or other JSON-decodable value.
-// Returns an error if the CloudEvent payload cannot be parsed or if
-// the data cannot be unmarshaled into v.
 func EventToStruct(e event.Event, v any) error {
 	var msg MessagePublishedData
 	if err := e.DataAs(&msg); err != nil {
