@@ -8,10 +8,12 @@ tasks:
   doc-gen:
     cmds:
       - |
+        printf 'go doc\n```text\n' > "README.md"
         {
           for p in $(go list ./...); do
-          printf "==== %s ====\n" "$p"
-          go doc -all "$p"
-          printf "\n\n"
+            printf "==== %s ====\n" "$p"
+            go doc -all "$p"
+            printf "\n\n"
           done
-        } > "README.md"
+        } >> "README.md"
+        printf '\n```\n' >> "README.md"

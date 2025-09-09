@@ -1,3 +1,5 @@
+go doc
+```text
 ==== github.com/hrom-in-space/imagination-tools ====
 package imagination_tools // import "github.com/hrom-in-space/imagination-tools"
 
@@ -103,3 +105,5 @@ func NewStorageClient(ctx context.Context) (StorageClient, error)
 
 
 
+
+```
