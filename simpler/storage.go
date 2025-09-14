@@ -100,7 +100,7 @@ func (c *storageClient) UploadJSONSchematized(ctx context.Context, bucket string
 	}
 
 	return c.upload(ctx, bucket, name, bytes.NewReader(data), "application/json", map[string]string{
-		schemaRefKey: object.(avro.NamedSchema).Name(),
+		schemaRefKey: object.Schema().(avro.NamedSchema).Name(),
 	})
 }
 
