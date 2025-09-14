@@ -5,15 +5,6 @@ tasks:
     cmds:
       - go tool avrogo -p schemas -d schemas ./schemas/*.avsc
 
-  doc-gen:
+  gen:
     cmds:
-      - |
-        printf 'go doc\n```text\n' > "README.md"
-        {
-          for p in $(go list ./...); do
-            printf "==== %s ====\n" "$p"
-            go doc -all "$p"
-            printf "\n\n"
-          done
-        } >> "README.md"
-        printf '\n```\n' >> "README.md"
+      - go generate ./...
