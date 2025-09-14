@@ -6,4 +6,5 @@
 //
 //go:generate go tool avrogen -pkg schemas -encoders -o story-drafted-v1_gen.go -tags json:camel story-drafted-v1.avsc
 //go:generate go tool avrogen -pkg schemas -encoders -o story-uploaded-v1_gen.go -tags json:camel story-uploaded-v1.avsc
+//go:generate go tool avrogen -pkg schemas -encoders -o scenario-v1_gen.go -tags json:camel scenario-v1.avsc
 package schemas

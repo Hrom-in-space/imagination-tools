@@ -1,0 +1,65 @@
+{
+  "type": "record",
+  "name": "ScenarioV1",
+  "fields": [
+    {
+      "name": "scenario",
+      "type": "string"
+    },
+    {
+      "name": "characters",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "character",
+          "fields": [
+            {
+              "name": "id",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "scenes",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "scene",
+          "fields": [
+            {
+              "name": "id",
+              "type": "string"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "type": "string"
+            },
+            {
+              "name": "characters",
+              "type": {
+                "type": "array",
+                "items": "string"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
