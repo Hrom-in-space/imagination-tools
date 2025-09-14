@@ -2,16 +2,13 @@ module github.com/hrom-in-space/imagination-tools
 
 go 1.24
 
-tool (
-	github.com/hamba/avro/v2/cmd/avrogen
-	github.com/heetch/avro/cmd/avrogo
-)
+tool github.com/hamba/avro/v2/cmd/avrogen
 
 require (
 	cloud.google.com/go/pubsub v1.49.0
 	cloud.google.com/go/storage v1.56.1
 	github.com/cloudevents/sdk-go/v2 v2.16.1
-	github.com/heetch/avro v0.4.79
+	github.com/hamba/avro/v2 v2.30.0
 )
 
 require (
@@ -25,7 +22,6 @@ require (
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/detectors/gcp v1.27.0 // indirect
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/metric v0.53.0 // indirect
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/internal/resourcemapping v0.53.0 // indirect
-	github.com/actgardner/gogen-avro/v10 v10.2.1 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/cncf/xds/go v0.0.0-20250501225837-2ac532fd4443 // indirect
 	github.com/envoyproxy/go-control-plane/envoy v1.32.4 // indirect
@@ -40,12 +36,10 @@ require (
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.3.6 // indirect
 	github.com/googleapis/gax-go/v2 v2.15.0 // indirect
-	github.com/hamba/avro/v2 v2.30.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/planetscale/vtprotobuf v0.6.1-0.20240319094008-0393e58bdf10 // indirect
-	github.com/sergi/go-diff v1.3.1 // indirect
 	github.com/spiffe/go-spiffe/v2 v2.5.0 // indirect
 	github.com/zeebo/errs v1.4.0 // indirect
 	go.opencensus.io v0.24.0 // indirect
