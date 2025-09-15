@@ -7,7 +7,7 @@ import (
 
 // StoryDraftedV1 is a generated struct.
 type StoryDraftedV1 struct {
-	TaskID        string `avro:"taskID" json:"taskId"`
+	TaskID        string `avro:"taskID" json:"taskID"`
 	ArtifactCount int    `avro:"artifactCount" json:"artifactCount"`
 }
 

@@ -7,7 +7,7 @@ import (
 
 // StoryUploadedV1 is a generated struct.
 type StoryUploadedV1 struct {
-	TaskID string `avro:"taskID" json:"taskId"`
+	TaskID string `avro:"taskID" json:"taskID"`
 }
 
 var schemaStoryUploadedV1 = avro.MustParse(`{"name":"StoryUploadedV1","type":"record","fields":[{"name":"taskID","type":"string"}]}`)
